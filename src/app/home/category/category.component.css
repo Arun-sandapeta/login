@@ -1,0 +1,64 @@
+/* Basic reset for margin and padding */
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styling */
+.container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Distribute space around containers */
+    padding: 20px;
+    background-color: #f4f4f4; /* Light gray background for fluid container */
+}
+
+/* Individual container styling */
+.container {
+    width: 300px; /* Fixed width for each container */
+    margin: 10px;
+  
+    background-color: #ffffff; /* White background for each container */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    overflow: hidden; /* Clips content that overflows */
+    text-align: center; /* Center-aligns text inside the container */
+    cursor: pointer;
+}
+
+/* Image styling */
+.img img {
+    width: 100%; /* Make the image fill the container */
+    height: 250px; /* Maintain aspect ratio */
+    display: block; /* Remove bottom space */
+    
+}
+
+/* Content styling */
+.content {
+    padding: 10px;
+}
+
+/* Paragraph styling inside content */
+.content p {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Button styling */
+button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #007bff; /* Bootstrap primary blue */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

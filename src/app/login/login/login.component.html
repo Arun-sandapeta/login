@@ -19,9 +19,9 @@
       </div>
     </div>
   
-    <button type="submit"  [disabled]="loginForm.invalid">Login</button>
+    <button type="submit"  [disabled]="loginForm.invalid" (click)="onSubmit()">Login</button>
     <div>
-      <p>First time here? <a routerLink="/register">Register</a></p>
+      <button type="button" (click)="onRegister()">Register</button>
     </div>
   </form>
   

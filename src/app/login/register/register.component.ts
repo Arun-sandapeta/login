@@ -4,12 +4,12 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
-  styleUrl: './register.component.css'
+  styleUrls: ['./register.component.css']  // Corrected `styleUrl` to `styleUrls`
 })
 export class RegisterComponent implements OnInit {
   registrationForm!: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.registrationForm = this.fb.group({
@@ -18,24 +18,27 @@ export class RegisterComponent implements OnInit {
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', [Validators.required]]
     }, {
-      validator: this.passwordMatchValidator
+      validators: this.passwordMatchValidator // Corrected `validator` to `validators`
     });
-    }
+  }
 
-    passwordMatchValidator(formGroup: FormGroup): { [key: string]: boolean } | null {
-      const password = formGroup.get('password')?.value;
-      const confirmPassword = formGroup.get('confirmPassword')?.value;
-      if (password && confirmPassword && password !== confirmPassword) {
-        return { 'mismatch': true };
-      }
-      return null;
+  passwordMatchValidator(formGroup: FormGroup): { [key: string]: boolean } | null {
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
+    if (password && confirmPassword && password !== confirmPassword) {
+      return { 'mismatch': true };
     }
+    return null;
+  }
 
-    onSubmit(): void {
-      if (this.registrationForm.valid) {
-        console.log('Form Submitted', this.registrationForm.value);
-      }
+  onSubmit(): void {
+    if (this.registrationForm.valid) {
+      console.log('Form Submitted', this.registrationForm.value);
+
+      // Optional: Save the form data to local storage
+      localStorage.setItem('registrationData', JSON.stringify(this.registrationForm.value));
+    } else {
+      console.log('Form is not valid');
     }
-  
-
+  }
 }

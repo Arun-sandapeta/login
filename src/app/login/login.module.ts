@@ -5,20 +5,25 @@ import { RegisterComponent } from './register/register.component';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginRoutingModule } from './login-routing.module';
+import { RestaurantRegisterComponent } from './restaurant-register/restaurant-register.component';
+import { HomeModule } from '../home/home.module';
 
 
 
 @NgModule({
   declarations: [
     LoginComponent,
+    ForgotpasswordComponent,
     RegisterComponent,
-    ForgotpasswordComponent
+    RestaurantRegisterComponent,
+   
   ],
   imports: [
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    LoginRoutingModule  
+    LoginRoutingModule
+    
   ],
   exports: [LoginComponent]
 })

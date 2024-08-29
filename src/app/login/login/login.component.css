@@ -37,4 +37,7 @@ form {
   button[disabled] {
     background-color: #4d12d9;
   }
+  a{
+    cursor: pointer;
+  }
   

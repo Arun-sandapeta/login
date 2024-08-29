@@ -1,0 +1,14 @@
+
+<div class="container-fluid">
+    <div *ngFor="let item of products" class="container">
+      <div class="img">
+        <img [src]="item.imageUrl" [alt]="item.name">
+      </div>
+      <div class="content">
+        <p>{{ item.name }}</p>
+        <p>{{ item.price }}</p>
+        <button type="button" (click)="addToCart(item)">Add</button>
+      </div>
+    </div>
+  </div>
+  
